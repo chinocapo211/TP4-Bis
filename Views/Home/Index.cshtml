@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+<head>
+    
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class = "centro">TP 04 BIS - Index</h1>
+            <p class = "centro">Nuestro sitio para investigar sobre paises.</p><br>
+        </div>
+    </header>
+    <section>
+        <div>
+            <h3>Paises</h3>
+            @foreach (Pais pais in ViewBag.listaPaises)
+            {
+                <a href='@Url.Action("detallePais", new {nombrePais=pais.nombre})'> <img src="/img/@pais.imgBandera" alt="bandera @pais.nombre"></a>
+            }
+        </div>
+    </section>
+    <footer>
+        <p>Made by Ivo y Chinocapo</p>
+    </footer>
+</body>
